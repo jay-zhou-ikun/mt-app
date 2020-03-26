@@ -46,23 +46,23 @@ export default {
   },
   layout: 'blank',
   methods: {
-    login() {
-      let self = this;
-      self.$axios
-        .post("/users/signin", {
-          username: window.encodeURIComponent(self.username),
-          password: CryptoJS.MD5(self.password).toString()
-        })
-        .then(({ status, data }) => {
-          if (status === 200) {
-            if (data && data.code === 0) {
-              location.href = "/";
-            } else {
-              self.error = "服务器出错";
-            }
-          }
-        });
-    }
+    // login() {
+    //   let self = this;
+    //   self.$axios
+    //     .post("/users/signin", {
+    //       username: window.encodeURIComponent(self.username),
+    //       password: CryptoJS.MD5(self.password).toString()
+    //     })
+    //     .then(({ status, data }) => {
+    //       if (status === 200) {
+    //         if (data && data.code === 0) {
+    //           location.href = "/";
+    //         } else {
+    //           self.error = "服务器出错";
+    //         }
+    //       }
+    //     });
+    // }
   }
 };
 </script>
